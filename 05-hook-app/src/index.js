@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MultipleCustomHooks } from './components/03-useFetch/MultipleCustomHooks';
+import { MemoHook } from './components/06-useMemo/MemoHook';
 
-ReactDOM.render(
-  <MultipleCustomHooks />
-  , document.getElementById('root'));
+ReactDOM.render(<MemoHook />, document.getElementById('root'));
 

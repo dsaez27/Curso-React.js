@@ -2,7 +2,7 @@ import React from 'react';
 import { useCounter } from '../../Hooks/useCounter';
 import { useFetch } from '../../Hooks/useFetch';
 
-import '../02-useEffect/effects.css';
+import '../03-useFetch/effect.css';
 
 export const MultipleCustomHooks = () => {
 	const { counter, increment } = useCounter(1);
@@ -25,9 +25,9 @@ export const MultipleCustomHooks = () => {
 					<p className=''> {quote}</p>
 					<footer className='blockquote-footer'> {author} </footer>
 				</blockquote>
-			)}
-
-			<button className='btn btn-primary' onClick={increment}>
+				)}
+			
+			<button className='btn btn-primary m' onClick={increment}>
 				Siguiente quote
 			</button>
 		</>
