@@ -33,6 +33,10 @@ export const Padre = () => {
                     />
                 ))
             }
+<<<<<<< HEAD
+=======
+            {/* <Hijo /> */}
+>>>>>>> 1c411d669d8b8a7a4bfd1a376c980bac5880408a
         </div>
     )
 }
