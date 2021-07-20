@@ -6,6 +6,8 @@ import { act } from '@testing-library/react';
 
 describe('Pruebas en <TodoApp />', () => {
     const wrapper = shallow(<TodoApp />);
+    
+    Storage.prototype.setItem = jest.fn(() => {});
 
     test('Debe de mostrarse correctamente', () => {
         expect(wrapper).toMatchSnapshot();
@@ -20,5 +22,13 @@ describe('Pruebas en <TodoApp />', () => {
         });
 
         expect(wrapper.find('h1').text().trim()).toBe('TodoApp (2)');
+        expect(localStorage.setItem).toHaveBeenCalledTimes(2)
     });
+
+    test('Debe de eliminar un TODO', () => {
+        wrapper.find('TodoAdd').prop('handleAddTodo')(demoTodos[0]);
+        wrapper.find('TodoList').prop('handleDelete')(demoTodos[0].id);
+    
+        expect(wrapper.find('h1').text().trim()).toBe('TodoApp (0)');
+    })
 });
