@@ -2,16 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './HeroCard.css';
 
-export const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance, characters }) => {
+export const HeroCard = ({
+    id,
+    superhero,
+    publisher,
+    alter_ego,
+    first_appearance,
+    characters,
+}) => {
     return (
-        <Link to={`./hero/${id}`} className="card my-card m-1">
-            <img src={`./assets/heroes/${id}.jpg`} className="img img-responsive" alt={superhero} />
-            <div className="profile-name">{superhero}</div>
-            <div className="profile-position">{alter_ego}</div>
-            <div className="profile-overview">
-                <div className="profile-overview">
-                    <div className="row">
-                        <div className="col-ms-4">
+        <Link to={`./hero/${id}`} className='card my-card m-1'>
+            <img
+                src={`./assets/heroes/${id}.jpg`}
+                className='img img-responsive'
+                alt={superhero}
+            />
+            <div className='profile-name'>{superhero}</div>
+            <div className='profile-position'>{alter_ego}</div>
+            <div className='profile-overview'>
+                <div className='profile-overview'>
+                    <div className='row'>
+                        <div className='col-ms-4'>
                             <h3>{publisher}</h3>
                             <p>
                                 Primera aparición: <br />
@@ -25,4 +36,3 @@ export const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance
         </Link>
     );
 };
-
