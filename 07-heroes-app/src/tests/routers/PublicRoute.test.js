@@ -20,4 +20,18 @@ describe('Pruebas en <PublicRoute />', () => {
         );
         expect(wrapper.find('span').exists()).toBe(true);
     });
+
+    test('Debe de bloquear el acceso a Login si esta loggeado', () => {
+        const wrapper = mount(
+            <MemoryRouter>
+                <PublicRoute
+                    isAuthenticated={true}
+                    component={() => <span>:D</span>}
+                    {...props}
+                />
+            </MemoryRouter>
+        );
+
+        expect(wrapper.find('span').exists()).toBe(false);
+    });
 });

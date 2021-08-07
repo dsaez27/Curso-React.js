@@ -11,7 +11,6 @@ export const HeroScreen = ({ history }) => {
         return <Redirect to="/" />;
     }
 
-    console.log(hero);
 
     const { id, superhero, publisher, alter_ego, first_appearance, characters } = hero[0];
 
