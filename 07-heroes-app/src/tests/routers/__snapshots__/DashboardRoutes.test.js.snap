@@ -91,7 +91,6 @@ Array [
           <img
             alt="Spider Man"
             className="img img-responsive"
-            src="./assets/heroes/marvel-spider.jpg"
           />
           <div
             className="profile-name"
@@ -136,7 +135,6 @@ Array [
           <img
             alt="Captain America"
             className="img img-responsive"
-            src="./assets/heroes/marvel-captain.jpg"
           />
           <div
             className="profile-name"
@@ -181,7 +179,6 @@ Array [
           <img
             alt="Iron Man"
             className="img img-responsive"
-            src="./assets/heroes/marvel-iron.jpg"
           />
           <div
             className="profile-name"
@@ -226,7 +223,6 @@ Array [
           <img
             alt="Thor"
             className="img img-responsive"
-            src="./assets/heroes/marvel-thor.jpg"
           />
           <div
             className="profile-name"
@@ -271,7 +267,6 @@ Array [
           <img
             alt="Hulk"
             className="img img-responsive"
-            src="./assets/heroes/marvel-hulk.jpg"
           />
           <div
             className="profile-name"
@@ -316,7 +311,6 @@ Array [
           <img
             alt="Wolverine"
             className="img img-responsive"
-            src="./assets/heroes/marvel-wolverine.jpg"
           />
           <div
             className="profile-name"
@@ -361,7 +355,6 @@ Array [
           <img
             alt="Daredevil"
             className="img img-responsive"
-            src="./assets/heroes/marvel-daredevil.jpg"
           />
           <div
             className="profile-name"
@@ -406,7 +399,6 @@ Array [
           <img
             alt="Hawkeye"
             className="img img-responsive"
-            src="./assets/heroes/marvel-hawkeye.jpg"
           />
           <div
             className="profile-name"
@@ -451,7 +443,6 @@ Array [
           <img
             alt="Cyclops"
             className="img img-responsive"
-            src="./assets/heroes/marvel-cyclops.jpg"
           />
           <div
             className="profile-name"
@@ -496,7 +487,6 @@ Array [
           <img
             alt="Silver Surfer"
             className="img img-responsive"
-            src="./assets/heroes/marvel-silver.jpg"
           />
           <div
             className="profile-name"

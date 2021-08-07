@@ -50,7 +50,6 @@ exports[`Pruebas en <SearchScreen /> Debe de mostrar a batman y el input con el 
         <img
           alt="Batman"
           className="img img-responsive"
-          src="./assets/heroes/dc-batman.jpg"
         />
         <div
           className="profile-name"

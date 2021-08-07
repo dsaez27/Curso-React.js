@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
 import { getHeroesById } from './../../selectors/getHeroById';
+import { loadImage } from './../../helpers/helperImages';
 
 export const HeroScreen = ({ history }) => {
     const { heroeId } = useParams();
@@ -23,7 +24,8 @@ export const HeroScreen = ({ history }) => {
             <div className="row g-0">
                 <div className="col-md-4">
                     <img
-                        src={`../assets/heroes/${id}.jpg`}
+                        // src={`../assets/heroes/${id}.jpg`}
+                        src={loadImage(`./${heroeId}.jpg`).default}
                         className="img-fluid rounded-start"
                         alt={superhero}
                     />
