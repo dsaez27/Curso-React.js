@@ -12,13 +12,8 @@ export const HeroScreen = ({ history }) => {
         return <Redirect to='/' />;
     }
 
-    const {
-        superhero,
-        publisher,
-        alter_ego,
-        first_appearance,
-        characters,
-    } = hero[0];
+    const { superhero, publisher, alter_ego, first_appearance, characters } =
+        hero[0];
 
     const handleReturn = () => {
         history.length >= 2 ? history.push('/') : history.goBack();
