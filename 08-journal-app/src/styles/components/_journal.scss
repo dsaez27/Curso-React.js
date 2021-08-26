@@ -55,11 +55,12 @@
 
 .journal__entry-picture {
     height: 75px;
-    width: 75px;
+    width: 50%;
 }
 
 .journal__entry-body {
     padding: 10px;
+    width: 100%;
 }
 .journal__entry-title {
     font-size: 14px;
@@ -67,6 +68,12 @@
 }
 .journal__entry-content {
     font-size: 10px;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .journal__entry-date-box {
@@ -75,4 +82,8 @@
     flex-direction: column;
     justify-content: center;
     padding: 5px;
+}
+
+.journal__sidebar-span{
+    padding: 0px 5px;
 }

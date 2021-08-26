@@ -22,6 +22,7 @@
 
 .btn-primary{
     background-color: $primary;
+    transition: background-color 0.3s ease;
     border-radius: 2px;
 
     &:disabled {
@@ -31,6 +32,21 @@
     
     &:hover{
         background-color: darken($color: $primary, $amount: 15);
+    }
+}
+
+.btn-danger{
+    background-color: $danger;
+    transition: background-color 0.3s ease;
+    border-radius: 2px;
+
+    &:disabled {
+        background-color: lighten($color: $danger, $amount: 15);
+        cursor: auto;
+    }
+
+    &:hover{
+        background-color: darken($color: $danger, $amount: 15);
     }
 }
 

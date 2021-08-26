@@ -30,7 +30,7 @@
     height: 20px;
     width: 100%;
 
-    transition: border-bottom .3s ease;
+    transition: border-bottom 0.3s ease;
 
     &:focus {
         border-bottom: 1px solid $primary;
@@ -38,7 +38,7 @@
     }
 }
 
-.auth__social-networks{
+.auth__social-networks {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -48,13 +48,13 @@
     width: 100%;
 }
 
-.auth__alert-error{
-    background-color: red;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-
-
+.auth__alert-error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
 }
