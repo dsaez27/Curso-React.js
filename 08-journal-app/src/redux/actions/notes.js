@@ -14,10 +14,16 @@ export const startNewNote = () => {
             date: new Date().getTime(),
         };
 
-        const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
+        try {
+            const doc = await db
+                .collection(`${uid}/journal/notes`)
+                .add(newNote);
 
-        dispatch(activeNote(doc.id, newNote));
-        dispatch(addNewNote(doc.id, newNote));
+            dispatch(activeNote(doc.id, newNote));
+            dispatch(addNewNote(doc.id, newNote));
+        } catch (error) {
+            console.log(error);
+        }
     };
 };
 
@@ -63,21 +69,24 @@ export const startSaveNote = (note) => {
         await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore);
 
         dispatch(refreshNote(note.id, noteToFirestore));
-        Swal.fire('Saved', note.title, 'success');
+        Swal.fire({
+            icon: 'success',
+            title: note.title,
+            text: 'Saved',
+        });
     };
 };
 
-export const refreshNote = ( id, note ) => ({
+export const refreshNote = (id, note) => ({
     type: types.notesUpdated,
     payload: {
         id,
         note: {
             id,
-            ...note
-        }
-    }
+            ...note,
+        },
+    },
 });
-
 
 export const startUploading = (file) => {
     return async (dispatch, getState) => {
@@ -87,7 +96,7 @@ export const startUploading = (file) => {
             title: 'Uploading...',
             text: 'Please wait...',
             allowOutsideClick: false,
-            willOpen: () => {
+            onBeforeOpen: () => {
                 Swal.showLoading();
             },
         });
