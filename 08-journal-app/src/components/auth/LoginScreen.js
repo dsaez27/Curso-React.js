@@ -20,7 +20,7 @@ export const LoginScreen = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        isFormValid && dispatch(startLoginEmailPassword(email, password));
+        dispatch(startLoginEmailPassword(email, password));
     };
 
     const handleGoogleLogin = () => {

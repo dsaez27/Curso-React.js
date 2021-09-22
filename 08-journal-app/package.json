@@ -15,7 +15,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "sweetalert2": "^9.13.2",
     "validator": "^13.0.0"
@@ -42,6 +41,10 @@
     ]
   },
   "devDependencies": {
-    "cloudinary": "^1.27.0"
+    "cloudinary": "^1.21.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
+    "redux-mock-store": "^1.5.4"
   }
 }

@@ -40,31 +40,41 @@ describe('Pruebas cons las acciones de notes', () => {
         store = mockStore(initState);
     });
 
-    test('Debe de crear una nueva nota', async () => {
-        await store.dispatch(startNewNote());
-        const actions = store.getActions();
-        expect(actions[0]).toEqual({
-            type: types.notesActive,
-            payload: {
-                id: expect.any(String),
-                title: '',
-                body: '',
-                date: expect.any(Number),
-            },
-        });
+    afterEach(() => {
+        delete global.__mobxInstanceCount; // prevent warnings
+    });
 
-        expect(actions[1]).toEqual({
-            type: types.notesAddNew,
-            payload: {
-                id: expect.any(String),
-                title: '',
-                body: '',
-                date: expect.any(Number),
-            },
-        });
+    test('Debe de crear una nueva nota', async (done) => {
+        try {
+            await store.dispatch(startNewNote());
+            const actions = store.getActions();
+            expect(actions[0]).toEqual({
+                type: types.notesActive,
+                payload: {
+                    id: expect.any(String),
+                    title: '',
+                    body: '',
+                    date: expect.any(Number),
+                },
+            });
 
-        const docId = actions[1].payload.id;
-        await db.doc(`${'/TESTING'}/journal/notes/${docId}`).delete();
+            expect(actions[1]).toEqual({
+                type: types.notesAddNew,
+                payload: {
+                    id: expect.any(String),
+                    title: '',
+                    body: '',
+                    date: expect.any(Number),
+                },
+            });
+
+            const docId = actions[1].payload.id;
+            await db.doc(`${'/TESTING'}/journal/notes/${docId}`).delete();
+
+            done();
+        } catch (error) {
+            console.log(error);
+        }
     });
 
     test('startLoadingNotes debe cargar las notas', async () => {
@@ -109,7 +119,9 @@ describe('Pruebas cons las acciones de notes', () => {
         const file = new File([], 'foto.jpg');
         await store.dispatch(startUploading(file));
 
-        const docRef = await db.doc(`${'/TESTING'}/journal/notes/3bgSVmDI0PXylUFtfFn3`).get(); 
+        const docRef = await db
+            .doc(`${'/TESTING'}/journal/notes/3bgSVmDI0PXylUFtfFn3`)
+            .get();
         expect(docRef.data().url).toBe('https//hola-mundo.com/cosa.jpg');
     });
 });
