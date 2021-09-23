@@ -13,10 +13,6 @@ import { AppRouter } from './../../routers/AppRouter';
 import { act } from 'react-dom/test-utils';
 import { firebase } from '../../firebase/firebaseConfig';
 
-jest.mock('sweetalert2', () => ({
-    Swal: jest.fn(),
-}));
-
 jest.mock('../../redux/actions/auth', () => ({
     login: jest.fn(),
 }));
@@ -43,12 +39,14 @@ store.dispatch = jest.fn();
 
 describe('Pruebas en el AppRouter', () => {
     test('Debe de llamar el login si estoy autenticado', async () => {
+        let user;
+
         await act(async () => {
             const userCred = await firebase
                 .auth()
                 .signInWithEmailAndPassword('test@testing.com', '123456');
-            let user = userCred.user;
 
+            user = userCred.user;
             mount(
                 <Provider store={store}>
                     <MemoryRouter>
@@ -56,7 +54,11 @@ describe('Pruebas en el AppRouter', () => {
                     </MemoryRouter>
                 </Provider>
             );
-            expect(login).toHaveBeenCalled();
         });
+
+        expect(login).toHaveBeenCalledWith(
+            'CMtLe1XTUxRW1BVqf3Ey4WqgSXS2',
+            null
+        );
     });
 });
